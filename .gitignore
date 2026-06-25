@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtualenvs
+.venv/
+venv/
+env/
+
+# Test / coverage caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local Iceberg warehouse + SQL catalog (runtime artifacts)
+catalog.db
+*.db
+warehouse/
+wh/
+
+# Editor / OS
+.idea/
+.vscode/
+.DS_Store

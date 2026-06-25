@@ -1,0 +1,6 @@
+{"raw": "[2026-05-09 15:30:45] WARN (auth-service): User login failed due to timeout after 5000ms"}
+{"raw": "[2026-05-09 15:31:02] ERROR (payments-api): Card charge declined (insufficient_funds) for txn 88412"}
+{"raw": "[2026-05-09 15:31:48] INFO  (permit-processor): Permit request 1001 enqueued to storage queue"}
+{"raw": "[2026-05-09 15:32:11] ERROR (inventory-sync): DB connection lost to warehouse-primary; retrying"}
+{"raw": "this line does not match the structured format and should still flow through"}
+{"raw": "[2026-05-09 15:33:09] DEBUG (feature-flags): flag 'new_checkout' evaluated true for user 7781"}

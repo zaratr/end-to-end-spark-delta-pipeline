@@ -1,0 +1,10 @@
+# Core pipeline: Apache Iceberg tables + Arrow
+pyiceberg[sql-sqlite]>=0.7.0
+pyarrow>=15.0.0
+
+# LLM parsing path (optional). The pipeline runs without it via the
+# deterministic regex parser; install only to exercise the DSPy/Gemma path.
+# dspy-ai>=2.4.0
+
+# Dev / test
+pytest>=8.0.0
