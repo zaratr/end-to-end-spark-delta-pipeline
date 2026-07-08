@@ -11,6 +11,7 @@ that broke module import; this is the corrected, working module.
 from __future__ import annotations
 
 import json
+import os
 import re
 
 import dspy
@@ -24,7 +25,17 @@ def _ensure_lm(model: str = _DEFAULT_MODEL) -> None:
     global _LM_CONFIGURED, _CONFIGURED_MODEL
     if _LM_CONFIGURED and _CONFIGURED_MODEL == model:
         return
-    dspy.settings.configure(lm=dspy.OllamaLocal(model=model, max_tokens=500))
+    # DSPy 3.x: route to Ollama via litellm's "ollama/" provider prefix.
+    # base_url comes from OLLAMA_BASE_URL (or defaults to localhost).
+    base_url = os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434")
+    dspy.settings.configure(
+        lm=dspy.LM(
+            model=f"ollama/{model}",
+            api_base=base_url,
+            max_tokens=500,
+            temperature=0.0,
+        )
+    )
     _LM_CONFIGURED = True
     _CONFIGURED_MODEL = model
 
